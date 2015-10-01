@@ -1,0 +1,3 @@
+To install RFControl and/or RFShell on windows, run the setup.exe.
+
+ExampleClient contains the a c# source and executable for a small client. 

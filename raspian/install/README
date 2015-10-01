@@ -1,0 +1,22 @@
+RFControl raspi installation instructions and additional information
+
+1. run the install.sh script.  
+
+	sudo ./install.sh
+
+	It will:
+	a) copy the ftdi driver to /usr/local/lib and update the ld cache
+	b) create a "var" directory for files for RFControl and make it rw by everyone
+	c) copy a udev rules file to /etc/udev/rules.d so that the USB port is writable by everyone
+	d) copy RFControl to /usr/local/bin/RFControl 
+
+2. copy your calibration file to /var/RFControl.  You can find this file on your Windows distribution CD and also in 
+   c:/Program Files (x86)/SynthMachine.  If you have a rev4 calibrated board and your serial number is AH009M5T the cal file will be named AH009M5T.csv.  
+   If you have a rev5 uncalibrated board it is named caltable.csv
+
+3. each time you plug your RF generator into the raspi or reboot, it will also attach the ftdi_sio driver to it.  This conflicts
+   with the driver that is used with RFControl, so you have to unload it. (I don't know how to have the raspi do this by default - maybe a udev rule?) 
+
+	sudo ./scripts/unload_default_drivers.sh
+
+phone: 512-470-2797.  email: terry@redoakcanyon.com

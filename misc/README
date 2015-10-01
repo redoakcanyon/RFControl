@@ -1,0 +1,2 @@
+If you are experimenting with RFControl and you don't have a caltable, use this
+default calibration table.  Copy it to /var/RFControl. 
